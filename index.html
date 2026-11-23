@@ -221,17 +221,22 @@ footer a{color:var(--muted)}
   var barra = document.getElementById("barra");
   var topo = document.getElementById("cta-topo");
   var oferta = document.getElementById("oferta");
-  var passouTopo = false, ofertaVisivel = false;
+  var agendado = false;
   function atualiza(){
+    agendado = false;
+    var h = window.innerHeight;
+    var passouTopo = topo.getBoundingClientRect().bottom < 0;
+    var r = oferta.getBoundingClientRect();
+    var ofertaVisivel = r.top < h * 0.85 && r.bottom > 0;
     var on = passouTopo && !ofertaVisivel;
     barra.classList.toggle("on", on);
     barra.setAttribute("aria-hidden", on ? "false" : "true");
     barra.querySelector("a").tabIndex = on ? 0 : -1;
   }
-  if ("IntersectionObserver" in window) {
-    new IntersectionObserver(function(es){ es.forEach(function(e){ passouTopo = !e.isIntersecting && e.boundingClientRect.top < 0; }); atualiza(); }).observe(topo);
-    new IntersectionObserver(function(es){ es.forEach(function(e){ ofertaVisivel = e.isIntersecting; }); atualiza(); }, {threshold: 0.2}).observe(oferta);
-  }
+  function pede(){ if (!agendado) { agendado = true; requestAnimationFrame(atualiza); } }
+  window.addEventListener("scroll", pede, {passive: true});
+  window.addEventListener("resize", pede);
+  atualiza();
 
   // Aviso de cookies
   var ck = document.getElementById("cookies");
