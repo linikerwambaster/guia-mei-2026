@@ -6,6 +6,7 @@
 <title>Guia Completo do MEI 2026</title>
 <meta name="description" content="DAS, nota fiscal, limite de faturamento, declaração anual e os links oficiais certos, explicados passo a passo em um PDF.">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B2A4A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -15,29 +16,38 @@
   --soft:#F2F7FD; --blue:#1F6FD1; --blue-soft:#E8F1FD; --green:#13935B; --green-dark:#0E7A4B;
   --f-title:"Archivo", "Arial Black", Arial, sans-serif;
   --f-body:"Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+  --cookie-h:0px;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;padding-bottom:calc(84px + var(--cookie-h))}
 .wrap{max-width:680px;margin:0 auto;padding:0 max(18px, env(safe-area-inset-left, 0px)) 0 max(18px, env(safe-area-inset-right, 0px))}
 .topo{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:26px 0 34px}
 .ola{font-size:.95rem;color:#C9D8EA;margin:0 0 14px}
 .ola b{color:#fff}
 .hero{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 22px 44px -20px rgba(0,0,0,.6)}
-h1{font-family:var(--f-title);font-weight:800;font-size:clamp(2rem,1.4rem + 3vw,2.8rem);line-height:1.05;letter-spacing:-.015em;margin:24px 0 12px;text-wrap:balance}
+.alerta{display:inline-flex;align-items:center;gap:8px;background:#F2B134;color:#0B2A4A;font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:999px;margin:0 0 12px}
+h1{font-family:var(--f-title);font-weight:800;font-size:clamp(2.1rem,1.5rem + 3.2vw,3rem);line-height:1.04;letter-spacing:-.015em;margin:0 0 18px;text-wrap:balance}
+.sub b{color:#fff}
 h2{font-family:var(--f-title);font-weight:800;font-size:1.5rem;line-height:1.15;color:var(--navy);margin:0 0 14px;text-wrap:balance}
-.sub{font-size:1.08rem;color:#D6E3F2;margin:0 0 22px}
-.btn{display:block;width:100%;text-align:center;background:var(--green);color:#fff;text-decoration:none;font-family:var(--f-body);font-weight:700;font-size:1.12rem;padding:17px 20px;border-radius:12px;box-shadow:0 12px 24px -12px rgba(19,147,91,.85);transition:background .15s ease, transform .15s ease}
+.sub{font-size:1.08rem;color:#D6E3F2;margin:18px 0 22px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:60px;text-align:center;background:var(--green);color:#fff;text-decoration:none;font-family:var(--f-body);font-weight:700;font-size:1.15rem;padding:16px 20px;border-radius:14px;box-shadow:0 12px 24px -12px rgba(19,147,91,.85);transition:background .15s ease, transform .15s ease}
+.btn svg{flex:0 0 auto}
 .btn:hover{background:var(--green-dark)}
 .btn:active{transform:translateY(1px)}
 .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+main .btn:focus-visible,.barra .btn:focus-visible{outline-color:var(--navy)}
 .preco-linha{text-align:center;font-size:.92rem;color:#C9D8EA;margin:10px 0 0}
-main.wrap{padding-bottom:40px}
+.seguro{display:flex;justify-content:center;gap:6px 14px;flex-wrap:wrap;margin:12px 0 0;font-size:.85rem;color:var(--muted)}
+.seguro span{display:inline-flex;align-items:center;gap:6px}
+.seguro span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}
+main.wrap{padding-bottom:24px}
 section{margin-top:44px}
 .lista{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 .lista li{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
 .lista li::before{content:"";width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23FFFFFF' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/15px no-repeat}
 .lista b{font-weight:700;color:var(--navy)}
+.cta-meio{margin-top:18px}
 .motivos{display:grid;gap:12px}
 .motivo{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:16px 18px}
 .motivo b{display:block;font-family:var(--f-title);font-weight:700;font-size:1.15rem;color:var(--navy);margin-bottom:4px}
@@ -46,31 +56,58 @@ section{margin-top:44px}
 .aviso b{color:var(--navy)}
 .oferta{background:#fff;border:2px solid var(--navy);border-radius:18px;padding:26px 22px;text-align:center;box-shadow:0 18px 40px -26px rgba(11,42,74,.55)}
 .oferta .nome{font-weight:700;color:var(--navy);margin:0 0 6px}
-.oferta .valor{font-family:var(--f-title);font-weight:800;font-size:3.2rem;line-height:1;color:var(--navy);margin:6px 0}
+.oferta .valor{font-family:var(--f-title);font-weight:800;font-size:3.4rem;line-height:1;color:var(--navy);margin:6px 0}
 .oferta .valor small{font-size:1.2rem;font-weight:700;vertical-align:.9em;margin-right:4px}
 .oferta .det{color:var(--muted);font-size:.95rem;margin:0 0 18px}
-.garantia{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:16px;font-size:.92rem;color:var(--muted);text-align:left}
-.selo{flex:0 0 auto;width:46px;height:46px;border-radius:50%;border:2px solid var(--green);color:var(--green);display:grid;place-items:center;font-weight:700;font-size:.78rem;line-height:1;text-align:center}
-details{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
-summary{cursor:pointer;font-weight:700;color:var(--navy);list-style-position:outside}
-details p{margin:10px 0 0;color:var(--muted)}
+.garantia{display:grid;grid-template-columns:132px 1fr;gap:18px;align-items:center;background:linear-gradient(135deg,#F3F9F6 0%,#EEF5FD 100%);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.garantia img{width:132px;height:132px;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(11,42,74,.28))}
+.garantia h3{font-family:var(--f-title);font-weight:800;font-size:1.3rem;line-height:1.15;color:var(--navy);margin:0 0 6px}
+.garantia p{margin:0;color:var(--muted);font-size:.97rem}
+.garantia a{color:var(--navy);font-weight:700;word-break:break-word}
+@media (max-width:440px){.garantia{grid-template-columns:1fr;text-align:center;justify-items:center}.garantia img{width:150px;height:150px}}
+.faq{display:grid;gap:10px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .15s ease, box-shadow .15s ease}
+.faq details[open]{border-color:var(--blue);box-shadow:0 10px 24px -18px rgba(31,111,209,.7)}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:56px;padding:14px 16px;cursor:pointer;font-weight:700;color:var(--navy);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:0 0 28px;height:28px;border-radius:50%;background:var(--blue-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 6v12M6 12h12' stroke='%231F6FD1' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E") center/16px no-repeat;transition:transform .2s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:focus-visible{outline:3px solid var(--blue);outline-offset:-3px;border-radius:14px}
+.faq .resp{padding:0 16px 16px;color:var(--muted)}
+.faq .resp p{margin:0}
 footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted);line-height:1.55}
 footer p{margin:0 0 8px}
 footer a{color:var(--muted)}
-@media (prefers-reduced-motion: reduce){.btn{transition:none}}
+/* barra fixa de compra */
+.barra{position:fixed;left:0;right:0;bottom:var(--cookie-h);z-index:20;background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -10px 24px -16px rgba(11,42,74,.45);padding:10px max(14px, env(safe-area-inset-left, 0px)) calc(10px + env(safe-area-inset-bottom, 0px));transform:translateY(120%);transition:transform .25s ease}
+.barra.on{transform:none}
+.barra .in{max-width:680px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.barra .p{flex:0 0 auto;line-height:1.1}
+.barra .p small{display:block;font-size:.72rem;color:var(--muted)}
+.barra .p b{font-family:var(--f-title);font-size:1.35rem;color:var(--navy)}
+.barra .btn{min-height:52px;font-size:1.02rem;padding:12px 14px;box-shadow:none}
+/* cookies */
+.cookies{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--navy);color:#E6EEF8;font-size:.85rem;padding:12px max(14px, env(safe-area-inset-left, 0px)) calc(12px + env(safe-area-inset-bottom, 0px))}
+.cookies[hidden]{display:none}
+.cookies .in{max-width:680px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.cookies p{margin:0;flex:1}
+.cookies a{color:#fff}
+.cookies button{flex:0 0 auto;background:#fff;color:var(--navy);border:0;border-radius:10px;font:700 .9rem var(--f-body);padding:10px 16px;min-height:44px;cursor:pointer}
+@media (prefers-reduced-motion: reduce){.btn,.barra,.faq summary::after{transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <header class="topo"><div class="wrap">
-
   <p class="ola" id="ola">Para quem é <b>MEI</b> e quer tudo explicado em um lugar só.</p>
 
-  <img class="hero" src="img/guia_hero.jpg" width="1200" height="800" alt="Guia Completo do MEI 2026 impresso sobre o balcão de um pequeno negócio, ao lado de um celular com a Central de Links aberta" fetchpriority="high">
+  <p class="alerta"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3z" fill="#0B2A4A"/><path d="M12 9v5" stroke="#F2B134" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="17" r="1.3" fill="#F2B134"/></svg>Alerta para quem é MEI</p>
+  <h1>Cuidado com o que você paga.</h1>
 
-  <h1>Guia Completo do MEI 2026</h1>
-  <p class="sub">DAS, nota fiscal, limite de faturamento, declaração anual e INSS explicados passo a passo, com o link oficial certo em cada etapa. Em PDF, no seu celular.</p>
+  <img class="hero" src="img/guia_hero.jpg" width="1200" height="800" alt="Material impresso sobre o balcão de um pequeno negócio, ao lado de um celular com a Central de Links aberta" fetchpriority="high">
 
-  <a class="btn checkout" href="#" data-checkout>Quero o meu guia por R$ 27,90</a>
+  <p class="sub">Todo mês chegam boletos e mensagens cobrando "taxas do MEI" que não existem. O <b>Guia Completo do MEI 2026</b> mostra o que é oficial, o que é golpe e o passo a passo de DAS, nota fiscal, limite e declaração, com o link certo em cada etapa.</p>
+
+  <a class="btn checkout" id="cta-topo" href="#" data-checkout>Quero o meu guia por R$ 27,90</a>
   <p class="preco-linha">Pagamento único · Pix ou cartão · chega no seu e-mail na hora</p>
 </div></header>
 <main class="wrap">
@@ -87,6 +124,7 @@ footer a{color:var(--muted)}
       <li><span><b>Golpes:</b> as taxas que ninguém pode te cobrar, para você não cair em boleto falso.</span></li>
       <li><span><b>Bônus:</b> Central de Links e calendário do ano, mais a planilha de controle mensal.</span></li>
     </ul>
+    <div class="cta-meio"><a class="btn checkout" href="#" data-checkout>Quero o meu guia por R$ 27,90</a></div>
   </section>
 
   <section>
@@ -102,30 +140,61 @@ footer a{color:var(--muted)}
     <div class="aviso"><b>Importante:</b> abrir e manter o MEI é grátis nos sites oficiais (.gov.br). O único pagamento do mês é o DAS. Este guia é um material de apoio opcional, feito por uma empresa privada, que junta o passo a passo e os links certos em um lugar só.</div>
   </section>
 
-  <section>
+  <section id="oferta">
     <div class="oferta">
       <p class="nome">Guia Completo do MEI 2026 + bônus</p>
       <p class="valor"><small>R$</small>27,90</p>
       <p class="det">Pagamento único. Você recebe o link do PDF no e-mail logo depois do pagamento.</p>
-      <a class="btn checkout" href="#" data-checkout>Quero o meu guia</a>
-      <div class="garantia"><span class="selo">7<br>dias</span><span>Se não gostar, peça o reembolso em até 7 dias e recebe o valor de volta.</span></div>
+      <a class="btn checkout" href="#" data-checkout>
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><rect x="5" y="11" width="14" height="10" rx="2.5" fill="#fff"/></svg>
+        Quero o meu guia
+      </a>
+      <div class="seguro"><span>Pagamento seguro pela Cakto</span><span>Pix ou cartão</span><span>Acesso imediato</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="garantia">
+      <img src="img/selo_7dias.png" width="300" height="300" alt="Selo de garantia de 7 dias" loading="lazy">
+      <div>
+        <h3>Garantia de 7 dias</h3>
+        <p>Se não gostar, peça o reembolso em até 7 dias pelo e-mail <a href="mailto:contato@empresarialdigitallk.org">contato@empresarialdigitallk.org</a> e recebe 100% do valor de volta, sem burocracia.</p>
+      </div>
     </div>
   </section>
 
   <section>
     <h2>Perguntas</h2>
-    <details><summary>Isso é do governo?</summary><p>Não. É um material de apoio feito pela Empresarial Digital, uma empresa privada. Todos os serviços do MEI continuam gratuitos nos sites oficiais, e o guia mostra exatamente onde.</p></details>
-    <details><summary>Como eu recebo?</summary><p>Logo depois do pagamento chega no seu e-mail o link para baixar o PDF. Confira também a caixa de spam e promoções.</p></details>
-    <details><summary>Vou ter que pagar mais alguma coisa?</summary><p>Não. É um pagamento único de R$ 27,90. Não existe mensalidade nem taxa extra.</p></details>
-    <details><summary>Serve para qualquer MEI?</summary><p>Sim. Comércio, indústria e serviços. Onde a regra muda por atividade, o guia mostra a diferença.</p></details>
+    <div class="faq">
+      <details open><summary>Isso é do governo?</summary><div class="resp"><p>Não. É um material de apoio feito pela Empresarial Digital, uma empresa privada. Todos os serviços do MEI continuam gratuitos nos sites oficiais, e o guia mostra exatamente onde.</p></div></details>
+      <details><summary>Como eu recebo?</summary><div class="resp"><p>Logo depois do pagamento chega no seu e-mail o link para baixar o PDF. Confira também a caixa de spam e promoções.</p></div></details>
+      <details><summary>Vou ter que pagar mais alguma coisa?</summary><div class="resp"><p>Não. É um pagamento único de R$ 27,90. Não existe mensalidade nem taxa extra.</p></div></details>
+      <details><summary>Serve para qualquer MEI?</summary><div class="resp"><p>Sim. Comércio, indústria e serviços. Onde a regra muda por atividade, o guia mostra a diferença.</p></div></details>
+      <details><summary>E se eu não gostar?</summary><div class="resp"><p>Você tem 7 dias de garantia. É só mandar um e-mail para contato@empresarialdigitallk.org pedindo o reembolso e devolvemos o valor.</p></div></details>
+    </div>
+    <div class="cta-meio"><a class="btn checkout" href="#" data-checkout>Quero o meu guia por R$ 27,90</a></div>
   </section>
 
   <footer>
-    <p><b>Empresarial Digital</b> · Liniker Wambaster da Silva LTDA · CNPJ 65.355.896/0001-77</p>
-    <p>Empresa privada de apoio a microempreendedores. Sem vínculo com a Receita Federal, o Sebrae ou qualquer órgão do governo. Os serviços oficiais do MEI são gratuitos em gov.br.</p>
-    <p>Contato: contato@empresarialdigitallk.org · <a href="privacidade.html">Política de privacidade</a></p>
+    <p><b>Empresarial Digital</b> · Empresa privada de apoio a microempreendedores. Sem vínculo com a Receita Federal, o Sebrae ou qualquer órgão do governo. Os serviços oficiais do MEI são gratuitos em gov.br.</p>
+    <p>Contato: <a href="mailto:contato@empresarialdigitallk.org">contato@empresarialdigitallk.org</a> · <a href="privacidade.html">Política de privacidade</a> · <a href="privacidade.html#cookies">Política de cookies</a></p>
   </footer>
 </main>
+
+<div class="barra" id="barra" aria-hidden="true">
+  <div class="in">
+    <div class="p"><small>Pagamento único</small><b>R$ 27,90</b></div>
+    <a class="btn checkout" href="#" data-checkout tabindex="-1">Quero o meu guia</a>
+  </div>
+</div>
+
+<div class="cookies" id="cookies" role="region" aria-label="Aviso de cookies" hidden>
+  <div class="in">
+    <p>Usamos só cookies essenciais para a página funcionar. Veja a <a href="privacidade.html#cookies">política de cookies</a>.</p>
+    <button type="button" id="cookies-ok">Entendi</button>
+  </div>
+</div>
+
 <script>
 (function(){
   var CHECKOUT = "https://pay.cakto.com.br/8p8zxjd";
@@ -147,6 +216,33 @@ footer a{color:var(--muted)}
     var val = q.get(k); if (val) url.searchParams.set(k === "v" ? "utm_content" : k, val);
   });
   document.querySelectorAll("[data-checkout]").forEach(function(a){ a.href = url.toString(); });
+
+  // Barra fixa: aparece depois do botão do topo e some quando a oferta está na tela
+  var barra = document.getElementById("barra");
+  var topo = document.getElementById("cta-topo");
+  var oferta = document.getElementById("oferta");
+  var passouTopo = false, ofertaVisivel = false;
+  function atualiza(){
+    var on = passouTopo && !ofertaVisivel;
+    barra.classList.toggle("on", on);
+    barra.setAttribute("aria-hidden", on ? "false" : "true");
+    barra.querySelector("a").tabIndex = on ? 0 : -1;
+  }
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function(es){ es.forEach(function(e){ passouTopo = !e.isIntersecting && e.boundingClientRect.top < 0; }); atualiza(); }).observe(topo);
+    new IntersectionObserver(function(es){ es.forEach(function(e){ ofertaVisivel = e.isIntersecting; }); atualiza(); }, {threshold: 0.2}).observe(oferta);
+  }
+
+  // Aviso de cookies
+  var ck = document.getElementById("cookies");
+  var visto = false;
+  try { visto = localStorage.getItem("cookies_ok") === "1"; } catch (e) {}
+  function alturaCookies(){ document.documentElement.style.setProperty("--cookie-h", ck.hidden ? "0px" : ck.offsetHeight + "px"); }
+  if (!visto) { ck.hidden = false; alturaCookies(); window.addEventListener("resize", alturaCookies); }
+  document.getElementById("cookies-ok").addEventListener("click", function(){
+    try { localStorage.setItem("cookies_ok", "1"); } catch (e) {}
+    ck.hidden = true; alturaCookies();
+  });
 })();
 </script>
 </body>
