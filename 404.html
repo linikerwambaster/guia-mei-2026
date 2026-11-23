@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Abrindo a página</title>
+<style>body{margin:0;background:#0B2A4A;color:#fff;font-family:"Segoe UI",Arial,sans-serif;display:grid;place-items:center;min-height:100vh}a{color:#fff}</style>
+<script>
+// Links do e-mail no formato /l/{cnpj}?nome=...: abre a página principal levando os dados no "#",
+// que não vai para servidor nenhum. O CNPJ do caminho é descartado.
+(function(){
+  var base = "/guia-mei-2026/";
+  var dados = location.search.slice(1) || location.hash.slice(1);
+  location.replace(base + (dados ? "#" + dados : ""));
+})();
+</script>
+</head>
+<body>
+<p>Abrindo a página... <a href="/guia-mei-2026/">clique aqui</a> se não abrir.</p>
+</body>
+</html>

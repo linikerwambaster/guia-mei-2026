@@ -7,6 +7,7 @@
 <meta name="description" content="DAS, nota fiscal, limite de faturamento, declaração anual e os links oficiais certos, explicados passo a passo em um PDF.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0B2A4A">
+<meta name="referrer" content="no-referrer">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -93,6 +94,21 @@ footer a{color:var(--muted)}
 .cookies p{margin:0;flex:1}
 .cookies a{color:#fff}
 .cookies button{flex:0 0 auto;background:#fff;color:var(--navy);border:0;border-radius:10px;font:700 .9rem var(--f-body);padding:10px 16px;min-height:44px;cursor:pointer}
+/* cartão personalizado */
+.pessoal{background:#fff;border:2px solid var(--blue);border-radius:18px;padding:20px 20px 16px;box-shadow:0 18px 40px -28px rgba(31,111,209,.8)}
+.pessoal .tag{display:inline-block;margin:0 0 8px;background:var(--blue-soft);color:var(--blue);font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+.pessoal h2{margin-bottom:12px}
+.dados{margin:0 0 14px;display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.dados div{display:grid;grid-template-columns:130px 1fr;gap:10px;padding:10px 14px;border-top:1px solid var(--line)}
+.dados div:first-child{border-top:0}
+.dados dt{color:var(--muted);font-size:.9rem}
+.dados dd{margin:0;font-weight:700;color:var(--navy);word-break:break-word}
+@media (max-width:420px){.dados div{grid-template-columns:1fr;gap:0}}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.checks li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;font-size:.98rem}
+.checks li::before{content:"";width:18px;height:18px;margin-top:4px;border:2px solid var(--navy);border-radius:4px}
+.checks b{color:var(--navy)}
+.p-nota{margin:14px 0 0;font-size:.8rem;color:var(--muted)}
 @media (prefers-reduced-motion: reduce){.btn,.barra,.faq summary::after{transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -111,6 +127,20 @@ footer a{color:var(--muted)}
   <p class="preco-linha">Pagamento único · Pix ou cartão · chega no seu e-mail na hora</p>
 </div></header>
 <main class="wrap">
+
+  <section id="pessoal" hidden>
+    <div class="pessoal">
+      <p class="tag">Preparado para você</p>
+      <h2 id="p-titulo">O seu checklist do MEI</h2>
+      <dl class="dados">
+        <div id="p-l-nome" hidden><dt>Nome</dt><dd id="p-nome"></dd></div>
+        <div id="p-l-abertura" hidden><dt>MEI aberto em</dt><dd id="p-abertura"></dd></div>
+        <div id="p-l-cidade" hidden><dt>Cidade</dt><dd id="p-cidade"></dd></div>
+      </dl>
+      <ul class="checks" id="p-checks"></ul>
+      <p class="p-nota">O guia mostra como conferir cada item de graça, no site oficial. Estes dados vêm do cadastro público de CNPJ e ficam só nesta página.</p>
+    </div>
+  </section>
 
   <section>
     <h2>O que você recebe</h2>
@@ -198,24 +228,98 @@ footer a{color:var(--muted)}
 <script>
 (function(){
   var CHECKOUT = "https://pay.cakto.com.br/8p8zxjd";
+  // Dados do link do e-mail (n8n): aceita ?a=b e #a=b. O CNPJ é ignorado de propósito.
   var q = new URLSearchParams(location.search);
-  // Saudação: só o primeiro nome, só letras, no máximo 20 caracteres
-  var nome = (q.get("nome") || "").trim().split(/\s+/)[0] || "";
-  nome = nome.replace(/[^A-Za-zÀ-ÿ'-]/g, "").slice(0, 20);
-  if (nome.length >= 2) {
-    nome = nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
+  if (location.hash.length > 1) {
+    new URLSearchParams(location.hash.slice(1)).forEach(function(v, k){ if (!q.has(k)) q.set(k, v); });
+  }
+  var MINUS = ["da","de","do","das","dos","e"];
+  function titulo(s){
+    return s.toLowerCase().split(" ").map(function(p, i){
+      if (i > 0 && MINUS.indexOf(p) >= 0) return p;
+      return p.charAt(0).toUpperCase() + p.slice(1);
+    }).join(" ");
+  }
+  function limpaNome(s){
+    s = (s || "").replace(/[^A-Za-zÀ-ÿ' ]/g, " ").replace(/\s+/g, " ").trim();
+    s = s.split(" ").filter(function(p){ return !/^(MEI|ME|EIRELI|LTDA|EPP)$/i.test(p); }).join(" ");
+    return s.length >= 2 ? titulo(s).slice(0, 60) : "";
+  }
+  function limpaCidade(s){
+    s = (s || "").replace(/[^A-Za-zÀ-ÿ' -]/g, "").replace(/\s+/g, " ").trim();
+    var m = s.match(/^(.*?)\s*-\s*([A-Za-z]{2})$/);
+    if (m && m[1]) return titulo(m[1]) + " - " + m[2].toUpperCase();
+    return s.length >= 2 && !/^undefined/i.test(s) ? titulo(s).slice(0, 50) : "";
+  }
+  function lerData(s){
+    s = (s || "").trim(); var y, mo, d, m;
+    if ((m = s.match(/^(\d{4})-(\d{2})-(\d{2})/))) { y = +m[1]; mo = +m[2]; d = +m[3]; }
+    else if ((m = s.match(/^(\d{2})\/(\d{2})\/(\d{4})$/))) { d = +m[1]; mo = +m[2]; y = +m[3]; }
+    else if ((m = s.match(/^(\d{4})(\d{2})(\d{2})$/))) { y = +m[1]; mo = +m[2]; d = +m[3]; }
+    else return null;
+    var dt = new Date(y, mo - 1, d);
+    if (dt.getFullYear() !== y || dt.getMonth() !== mo - 1 || y < 2008 || dt > new Date()) return null;
+    return dt;
+  }
+  var nomeCompleto = limpaNome(q.get("nome"));
+  var primeiro = nomeCompleto.split(" ")[0] || "";
+  var cidade = limpaCidade(q.get("cidade"));
+  var abertura = lerData(q.get("abertura"));
+  var email = (q.get("email") || "").trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 120) email = "";
+
+  if (primeiro.length >= 2) {
     var ola = document.getElementById("ola");
     ola.textContent = "";
-    var b = document.createElement("b"); b.textContent = nome;
+    var b = document.createElement("b"); b.textContent = primeiro;
     ola.appendChild(document.createTextNode("Oi, ")); ola.appendChild(b);
     ola.appendChild(document.createTextNode(". Este é o guia que falamos no e-mail."));
   }
-  // Repassa só os parâmetros de campanha (nunca nome ou e-mail) para o checkout
+
+  // Cartão "O seu checklist do MEI" (só aparece se vier nome, abertura ou cidade)
+  function mostra(id, valor){ if (valor) { document.getElementById("p-" + id).textContent = valor; document.getElementById("p-l-" + id).hidden = false; } }
+  function item(html){ var li = document.createElement("li"); li.innerHTML = html; document.getElementById("p-checks").appendChild(li); }
+  function esc(s){ return s.replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
+  if (nomeCompleto || abertura || cidade) {
+    document.getElementById("pessoal").hidden = false;
+    if (primeiro) document.getElementById("p-titulo").textContent = primeiro + ", o seu checklist do MEI";
+    mostra("nome", nomeCompleto);
+    mostra("cidade", cidade);
+    var hoje = new Date();
+    if (abertura) {
+      var anos = hoje.getFullYear() - abertura.getFullYear() - ((hoje.getMonth() < abertura.getMonth() || (hoje.getMonth() === abertura.getMonth() && hoje.getDate() < abertura.getDate())) ? 1 : 0);
+      var dd = ("0" + abertura.getDate()).slice(-2) + "/" + ("0" + (abertura.getMonth() + 1)).slice(-2) + "/" + abertura.getFullYear();
+      mostra("abertura", dd + (anos >= 1 ? " (há " + anos + (anos === 1 ? " ano)" : " anos)") : ""));
+      var meses = (hoje.getFullYear() - abertura.getFullYear()) * 12 + (hoje.getMonth() - abertura.getMonth());
+      if (meses >= 1) item("<span><b>Cerca de " + meses + " guias DAS</b> desde a abertura, uma por mês, com vencimento no dia 20.</span>");
+      var ultimoAno = (hoje.getMonth() > 4) ? hoje.getFullYear() - 1 : hoje.getFullYear() - 2;
+      var decl = ultimoAno - abertura.getFullYear() + 1;
+      if (decl >= 1) item("<span><b>" + decl + (decl === 1 ? " declaração anual" : " declarações anuais") + "</b> (DASN-SIMEI) " + (decl === 1 ? "de " + abertura.getFullYear() : "de " + abertura.getFullYear() + " a " + ultimoAno) + ", uma por ano, até 31 de maio.</span>");
+      else item("<span><b>Primeira declaração anual</b> (DASN-SIMEI): vence em 31 de maio de " + (abertura.getFullYear() + 1) + ".</span>");
+    } else {
+      item("<span><b>DAS todo mês</b>, com vencimento no dia 20.</span>");
+      item("<span><b>Declaração anual</b> (DASN-SIMEI) até 31 de maio.</span>");
+    }
+    item("<span><b>Nota fiscal" + (cidade ? " em " + esc(cidade) : "") + "</b>: o passo a passo no emissor nacional.</span>");
+    item("<span><b>Lei nova:</b> limite de R$ 110 mil em 2027 e perdão de dívidas federais, com regras.</span>");
+  }
+
+  // Checkout: parâmetros de campanha + nome e e-mail já preenchidos (o CNPJ nunca vai)
   var url = new URL(CHECKOUT, location.href);
   ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","v"].forEach(function(k){
     var val = q.get(k); if (val) url.searchParams.set(k === "v" ? "utm_content" : k, val);
   });
-  document.querySelectorAll("[data-checkout]").forEach(function(a){ a.href = url.toString(); });
+  if (nomeCompleto) url.searchParams.set("name", nomeCompleto);
+  if (email) { url.searchParams.set("email", email); url.searchParams.set("confirmEmail", email); }
+  document.querySelectorAll("[data-checkout]").forEach(function(a){ a.href = url.toString(); a.rel = "noreferrer"; });
+
+  // Tira os dados pessoais da barra de endereço (não ficam no histórico nem se a pessoa copiar o link)
+  if ((location.search || location.hash) && history.replaceState) {
+    var keep = new URLSearchParams();
+    ["v","utm_source","utm_medium","utm_campaign","utm_content","utm_term"].forEach(function(k){ if (q.get(k)) keep.set(k, q.get(k)); });
+    var resto = keep.toString();
+    history.replaceState(null, "", location.pathname + (resto ? "?" + resto : ""));
+  }
 
   // Barra fixa: aparece depois do botão do topo e some quando a oferta está na tela
   var barra = document.getElementById("barra");
