@@ -8,49 +8,51 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F7F3EC; --card:#FFFFFF; --ink:#1D232B; --muted:#5B6470; --line:#E6DFD3;
-  --accent:#B8492F; --accent-dark:#963A25; --soft:#F1E7DA; --ok:#2F6B4F;
-  --f-title:"Fraunces", Georgia, "Times New Roman", serif;
-  --f-body:"Manrope", "Segoe UI", Arial, sans-serif;
+  --bg:#FFFFFF; --navy:#0B2A4A; --navy-2:#123A63; --ink:#14263D; --muted:#55657A; --line:#DCE6F2;
+  --soft:#F2F7FD; --blue:#1F6FD1; --blue-soft:#E8F1FD; --green:#13935B; --green-dark:#0E7A4B;
+  --f-title:"Archivo", "Arial Black", Arial, sans-serif;
+  --f-body:"Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6}
-.wrap{max-width:680px;margin:0 auto;padding:28px max(18px, env(safe-area-inset-left, 0px)) 40px max(18px, env(safe-area-inset-right, 0px))}
-.ola{font-size:.95rem;color:var(--muted);margin:0 0 14px}
-.ola b{color:var(--ink)}
-.hero{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 18px 40px -18px rgba(29,35,43,.45)}
-h1{font-family:var(--f-title);font-weight:650;font-size:clamp(2rem,1.4rem + 3vw,2.9rem);line-height:1.05;letter-spacing:-.01em;margin:26px 0 12px;text-wrap:balance}
-h2{font-family:var(--f-title);font-weight:650;font-size:1.55rem;line-height:1.15;margin:0 0 14px;text-wrap:balance}
-.sub{font-size:1.1rem;color:var(--muted);margin:0 0 22px}
-.btn{display:block;width:100%;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1.12rem;padding:17px 20px;border-radius:12px;box-shadow:0 10px 22px -12px rgba(184,73,47,.9);transition:background .15s ease, transform .15s ease}
-.btn:hover{background:var(--accent-dark)}
+.wrap{max-width:680px;margin:0 auto;padding:0 max(18px, env(safe-area-inset-left, 0px)) 0 max(18px, env(safe-area-inset-right, 0px))}
+.topo{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:26px 0 34px}
+.ola{font-size:.95rem;color:#C9D8EA;margin:0 0 14px}
+.ola b{color:#fff}
+.hero{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 22px 44px -20px rgba(0,0,0,.6)}
+h1{font-family:var(--f-title);font-weight:800;font-size:clamp(2rem,1.4rem + 3vw,2.8rem);line-height:1.05;letter-spacing:-.015em;margin:24px 0 12px;text-wrap:balance}
+h2{font-family:var(--f-title);font-weight:800;font-size:1.5rem;line-height:1.15;color:var(--navy);margin:0 0 14px;text-wrap:balance}
+.sub{font-size:1.08rem;color:#D6E3F2;margin:0 0 22px}
+.btn{display:block;width:100%;text-align:center;background:var(--green);color:#fff;text-decoration:none;font-family:var(--f-body);font-weight:700;font-size:1.12rem;padding:17px 20px;border-radius:12px;box-shadow:0 12px 24px -12px rgba(19,147,91,.85);transition:background .15s ease, transform .15s ease}
+.btn:hover{background:var(--green-dark)}
 .btn:active{transform:translateY(1px)}
-.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-.preco-linha{text-align:center;font-size:.92rem;color:var(--muted);margin:10px 0 0}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.preco-linha{text-align:center;font-size:.92rem;color:#C9D8EA;margin:10px 0 0}
+main.wrap{padding-bottom:40px}
 section{margin-top:44px}
 .lista{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-.lista li{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
-.lista li::before{content:"";width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23B8492F' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
-.lista b{font-weight:700}
+.lista li{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.lista li::before{content:"";width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23FFFFFF' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/15px no-repeat}
+.lista b{font-weight:700;color:var(--navy)}
 .motivos{display:grid;gap:12px}
-.motivo{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-.motivo b{display:block;font-family:var(--f-title);font-weight:650;font-size:1.2rem;margin-bottom:4px}
+.motivo{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:16px 18px}
+.motivo b{display:block;font-family:var(--f-title);font-weight:700;font-size:1.15rem;color:var(--navy);margin-bottom:4px}
 .motivo p{margin:0;color:var(--muted)}
-.aviso{background:var(--soft);border-radius:14px;padding:16px 18px;font-size:.98rem}
-.aviso b{color:var(--ink)}
-.oferta{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 22px;text-align:center}
-.oferta .nome{font-weight:700;margin:0 0 6px}
-.oferta .valor{font-family:var(--f-title);font-weight:650;font-size:3.2rem;line-height:1;margin:6px 0}
-.oferta .valor small{font-size:1.2rem;font-weight:500;vertical-align:.9em;margin-right:4px}
+.aviso{background:var(--blue-soft);border-left:4px solid var(--blue);border-radius:12px;padding:16px 18px;font-size:.98rem}
+.aviso b{color:var(--navy)}
+.oferta{background:#fff;border:2px solid var(--navy);border-radius:18px;padding:26px 22px;text-align:center;box-shadow:0 18px 40px -26px rgba(11,42,74,.55)}
+.oferta .nome{font-weight:700;color:var(--navy);margin:0 0 6px}
+.oferta .valor{font-family:var(--f-title);font-weight:800;font-size:3.2rem;line-height:1;color:var(--navy);margin:6px 0}
+.oferta .valor small{font-size:1.2rem;font-weight:700;vertical-align:.9em;margin-right:4px}
 .oferta .det{color:var(--muted);font-size:.95rem;margin:0 0 18px}
 .garantia{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:16px;font-size:.92rem;color:var(--muted);text-align:left}
-.selo{flex:0 0 auto;width:46px;height:46px;border-radius:50%;border:2px solid var(--ok);color:var(--ok);display:grid;place-items:center;font-weight:700;font-size:.78rem;line-height:1;text-align:center}
-details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
-summary{cursor:pointer;font-weight:700;list-style-position:outside}
+.selo{flex:0 0 auto;width:46px;height:46px;border-radius:50%;border:2px solid var(--green);color:var(--green);display:grid;place-items:center;font-weight:700;font-size:.78rem;line-height:1;text-align:center}
+details{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;color:var(--navy);list-style-position:outside}
 details p{margin:10px 0 0;color:var(--muted)}
 footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted);line-height:1.55}
 footer p{margin:0 0 8px}
@@ -59,7 +61,7 @@ footer a{color:var(--muted)}
 </style>
 </head>
 <body>
-<main class="wrap">
+<header class="topo"><div class="wrap">
 
   <p class="ola" id="ola">Para quem é <b>MEI</b> e quer tudo explicado em um lugar só.</p>
 
@@ -70,6 +72,8 @@ footer a{color:var(--muted)}
 
   <a class="btn checkout" href="#" data-checkout>Quero o meu guia por R$ 27,90</a>
   <p class="preco-linha">Pagamento único · Pix ou cartão · chega no seu e-mail na hora</p>
+</div></header>
+<main class="wrap">
 
   <section>
     <h2>O que você recebe</h2>
