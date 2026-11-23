@@ -49,33 +49,11 @@ section{margin-top:44px}
 .lista li::before{content:"";width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23FFFFFF' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/15px no-repeat}
 .lista b{font-weight:700;color:var(--navy)}
 .cta-meio{margin-top:18px}
-.motivos{display:grid;gap:12px}
-.motivo{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:16px 18px}
-.motivo b{display:block;font-family:var(--f-title);font-weight:700;font-size:1.15rem;color:var(--navy);margin-bottom:4px}
-.motivo p{margin:0;color:var(--muted)}
-.aviso{background:var(--blue-soft);border-left:4px solid var(--blue);border-radius:12px;padding:16px 18px;font-size:.98rem}
-.aviso b{color:var(--navy)}
 .oferta{background:#fff;border:2px solid var(--navy);border-radius:18px;padding:26px 22px;text-align:center;box-shadow:0 18px 40px -26px rgba(11,42,74,.55)}
 .oferta .nome{font-weight:700;color:var(--navy);margin:0 0 6px}
 .oferta .valor{font-family:var(--f-title);font-weight:800;font-size:3.4rem;line-height:1;color:var(--navy);margin:6px 0}
 .oferta .valor small{font-size:1.2rem;font-weight:700;vertical-align:.9em;margin-right:4px}
 .oferta .det{color:var(--muted);font-size:.95rem;margin:0 0 18px}
-.garantia{display:grid;grid-template-columns:132px 1fr;gap:18px;align-items:center;background:linear-gradient(135deg,#F3F9F6 0%,#EEF5FD 100%);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
-.garantia img{width:132px;height:132px;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(11,42,74,.28))}
-.garantia h3{font-family:var(--f-title);font-weight:800;font-size:1.3rem;line-height:1.15;color:var(--navy);margin:0 0 6px}
-.garantia p{margin:0;color:var(--muted);font-size:.97rem}
-.garantia a{color:var(--navy);font-weight:700;word-break:break-word}
-@media (max-width:440px){.garantia{grid-template-columns:1fr;text-align:center;justify-items:center}.garantia img{width:150px;height:150px}}
-.faq{display:grid;gap:10px}
-.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .15s ease, box-shadow .15s ease}
-.faq details[open]{border-color:var(--blue);box-shadow:0 10px 24px -18px rgba(31,111,209,.7)}
-.faq summary{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:56px;padding:14px 16px;cursor:pointer;font-weight:700;color:var(--navy);list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";flex:0 0 28px;height:28px;border-radius:50%;background:var(--blue-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 6v12M6 12h12' stroke='%231F6FD1' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E") center/16px no-repeat;transition:transform .2s ease}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq summary:focus-visible{outline:3px solid var(--blue);outline-offset:-3px;border-radius:14px}
-.faq .resp{padding:0 16px 16px;color:var(--muted)}
-.faq .resp p{margin:0}
 footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted);line-height:1.55}
 footer p{margin:0 0 8px}
 footer a{color:var(--muted)}
@@ -101,32 +79,15 @@ footer a{color:var(--muted)}
 .parabens .pb-titulo{font-family:var(--f-title);font-weight:800;font-size:1.45rem;line-height:1.15;color:#fff;margin:0 0 6px}
 .btn-grande{min-height:64px;font-size:1.22rem}
 .topo .hero{margin-top:24px}
-/* exemplo de golpe */
-.golpe{position:relative;background:#FFF8F3;border:1px dashed #E07B39;border-radius:14px;padding:16px 16px 14px;margin:0 0 14px}
-.golpe-tag{position:absolute;top:-11px;left:14px;margin:0;background:#E07B39;color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
-.golpe-assunto{margin:4px 0 4px;font-weight:700;color:#8A3B12}
-.golpe-linha{margin:0 0 10px;font-size:.95rem;color:#5B3A26}
-.golpe-btn{display:inline-block;background:#C0392B;color:#fff;font-weight:700;font-size:.85rem;padding:6px 12px;border-radius:8px;text-decoration:line-through;opacity:.85}
-.prazo{background:#FFF6E0;border-left:4px solid #F2B134;border-radius:12px;padding:16px 18px;font-size:.98rem}
-.prazo b{display:block;color:var(--navy);font-size:1.05rem;margin-bottom:4px}
-.prazo p{margin:0;color:var(--ink)}
 .oferta .ancora{display:inline-block;background:#E9F6EF;color:#0E7A4B;font-weight:700;font-size:.88rem;padding:6px 12px;border-radius:999px;margin:4px 0 10px}
-/* cartão personalizado */
-.pessoal{background:#fff;border:2px solid var(--blue);border-radius:18px;padding:20px 20px 16px;box-shadow:0 18px 40px -28px rgba(31,111,209,.8)}
-.pessoal .tag{display:inline-block;margin:0 0 8px;background:var(--blue-soft);color:var(--blue);font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
-.pessoal h2{margin-bottom:12px}
-.dados{margin:0 0 14px;display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.dados div{display:grid;grid-template-columns:130px 1fr;gap:10px;padding:10px 14px;border-top:1px solid var(--line)}
-.dados div:first-child{border-top:0}
-.dados dt{color:var(--muted);font-size:.9rem}
-.dados dd{margin:0;font-weight:700;color:var(--navy);word-break:break-word}
-@media (max-width:420px){.dados div{grid-template-columns:1fr;gap:0}}
-.checks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.checks li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;font-size:.98rem}
-.checks li::before{content:"";width:18px;height:18px;margin-top:4px;border:2px solid var(--navy);border-radius:4px}
-.checks b{color:var(--navy)}
-.p-nota{margin:14px 0 0;font-size:.8rem;color:var(--muted)}
-@media (prefers-reduced-motion: reduce){.btn,.barra,.faq summary::after{transition:none}html{scroll-behavior:auto}}
+.lista.curta{gap:8px}
+.lista.curta li{padding:10px 14px}
+.parabens #pb-mei{margin:0 0 6px;font-size:.92rem;color:#C9D8EA}
+.garantia-mini{display:flex;gap:12px;align-items:center;text-align:left;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.garantia-mini img{flex:0 0 auto;width:84px;height:84px;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(11,42,74,.25))}
+.garantia-mini p{margin:0;font-size:.92rem;color:var(--muted)}
+.garantia-mini a{color:var(--navy);font-weight:700;word-break:break-word}
+@media (prefers-reduced-motion: reduce){.btn,.barra{transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -134,12 +95,13 @@ footer a{color:var(--muted)}
   <p class="ola" id="ola">Para quem é <b>MEI</b> e quer tudo explicado em um lugar só.</p>
   <div class="parabens" id="parabens" hidden>
     <p class="pb-titulo" id="pb-titulo">Parabéns!</p>
+    <p id="pb-mei" hidden></p>
     <p>Você está dando um passo importante: ter o <b>Guia Completo do MEI 2026</b> para fazer todos os pagamentos do jeito certo, com tudo em um lugar só. Sem ficar pesquisando em vários sites e sem pagar caro para alguém fazer o que você resolve de graça nos sites oficiais.</p>
   </div>
 
   <p class="alerta"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3z" fill="#0B2A4A"/><path d="M12 9v5" stroke="#F2B134" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="17" r="1.3" fill="#F2B134"/></svg>Alerta para quem é MEI</p>
   <h1>Cuidado com o que você paga.</h1>
-  <p class="sub">Todo mês chegam boletos e mensagens cobrando "taxas do MEI" que não existem. No guia você vê o que é oficial, o que é golpe e o link certo de cada etapa: DAS, nota fiscal, limite e declaração.</p>
+  <p class="sub">Quem acabou de abrir o MEI recebe boletos e mensagens cobrando "taxas" que não existem. O guia mostra o que é oficial, o que é golpe e o link certo de cada etapa.</p>
 
   <a class="btn checkout btn-grande" id="cta-topo" href="#" data-checkout>Comprar agora por R$ 27,90</a>
   <p class="preco-linha">Pix ou cartão · o PDF chega no seu e-mail na hora · 7 dias de garantia</p>
@@ -148,106 +110,37 @@ footer a{color:var(--muted)}
 </div></header>
 <main class="wrap">
 
-  <section id="pessoal" hidden>
-    <div class="pessoal">
-      <p class="tag">Preparado para você</p>
-      <h2 id="p-titulo">O seu checklist do MEI</h2>
-      <dl class="dados">
-        <div id="p-l-nome" hidden><dt>Nome</dt><dd id="p-nome"></dd></div>
-        <div id="p-l-abertura" hidden><dt>MEI aberto em</dt><dd id="p-abertura"></dd></div>
-        <div id="p-l-cidade" hidden><dt>Cidade</dt><dd id="p-cidade"></dd></div>
-      </dl>
-      <ul class="checks" id="p-checks"></ul>
-      <p class="p-nota">O guia mostra como conferir cada item de graça, no site oficial. Estes dados vêm do cadastro público de CNPJ e ficam só nesta página.</p>
-    </div>
-  </section>
-
   <section>
-    <h2>Imagine este e-mail chegando hoje</h2>
-    <div class="golpe" aria-label="Exemplo de e-mail de golpe">
-      <p class="golpe-tag">Exemplo de golpe</p>
-      <p class="golpe-assunto">ÚLTIMO AVISO: taxa anual do MEI pendente</p>
-      <p class="golpe-linha">Seu CNPJ pode ser cancelado. Valor: <b>R$ 97,00</b> · Vence: <b>hoje</b></p>
-      <span class="golpe-btn">Pagar boleto</span>
-    </div>
-    <p>Parece oficial. Tem o seu nome, o seu CNPJ e um prazo curto. Muita gente paga com medo de perder o CNPJ. <b>Só que essa taxa não existe.</b></p>
-    <p>Com o guia, você abre a página de golpes, confere em um minuto que é falso e gera o DAS certo, direto no site oficial. Esse um minuto já pode valer mais do que os R$ 27,90.</p>
-    <div class="cta-meio"><a class="btn checkout" href="#" data-checkout>Quero meu guia por R$ 27,90</a></div>
-  </section>
-
-  <section>
-    <h2>O que você recebe</h2>
-    <ul class="lista">
-      <li><span><b>DAS sem erro:</b> onde gerar, como pagar, quanto custa em 2026 e o que acontece se atrasar.</span></li>
-      <li><span><b>Nota fiscal:</b> quando é obrigatória e o passo a passo no emissor nacional.</span></li>
-      <li><span><b>Limite de faturamento:</b> R$ 81 mil hoje e o que muda com a lei nova em 2027 e 2028.</span></li>
-      <li><span><b>Declaração anual:</b> como enviar a DASN-SIMEI até 31 de maio, mesmo sem ter faturado.</span></li>
-      <li><span><b>INSS:</b> os benefícios que o DAS em dia garante e as carências de cada um.</span></li>
-      <li><span><b>Conta gov.br, CCMEI, alterar dados e dar baixa:</b> tudo pelo caminho oficial.</span></li>
-      <li><span><b>Golpes:</b> as taxas que ninguém pode te cobrar, para você não cair em boleto falso.</span></li>
-      <li><span><b>Bônus:</b> Central de Links e calendário do ano, mais a planilha de controle mensal.</span></li>
+    <h2>Tudo em um PDF só</h2>
+    <ul class="lista curta">
+      <li><span><b>DAS:</b> onde gerar, como pagar e quanto custa</span></li>
+      <li><span><b>Nota fiscal:</b> quando emitir e como</span></li>
+      <li><span><b>Declaração anual:</b> prazo e passo a passo, sem multa</span></li>
+      <li><span><b>Golpes:</b> as taxas que ninguém pode te cobrar</span></li>
+      <li><span><b>Lei nova:</b> limite de R$ 110 mil em 2027 e perdão de dívidas</span></li>
+      <li><span><b>Bônus:</b> Central de Links, calendário e planilha de controle</span></li>
     </ul>
-    <div class="cta-meio"><a class="btn checkout" href="#" data-checkout>Quero meu guia por R$ 27,90</a></div>
-  </section>
-
-  <section>
-    <div class="prazo">
-      <b>Tem DAS atrasado? Fique atento a janeiro.</b>
-      <p>A lei nova do MEI (LC 238/2026) perdoa dívidas federais do MEI, mas só mantém o perdão quem pagar o DAS em dia nos 6 primeiros meses da lei, a partir de janeiro de 2027. O guia mostra como conferir sua situação e não perder esse prazo.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Por que ter isso à mão</h2>
-    <div class="motivos">
-      <div class="motivo"><b>Você não cai em golpe</b><p>Todo mês chega boleto, e-mail e WhatsApp cobrando "taxa do MEI". Com o guia você sabe o que é oficial e o que é golpe.</p></div>
-      <div class="motivo"><b>Você não perde prazo</b><p>DAS todo dia 20, declaração até 31 de maio. O calendário mostra tudo o que vence no ano, para não pagar multa nem perder benefício.</p></div>
-      <div class="motivo"><b>Você para de procurar</b><p>Nada de juntar vídeo, post e site duvidoso. Está tudo em um PDF, na ordem em que você precisa.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="aviso"><b>Importante:</b> abrir e manter o MEI é grátis nos sites oficiais (.gov.br). O único pagamento do mês é o DAS. Este guia é um material de apoio opcional, feito por uma empresa privada, que junta o passo a passo e os links certos em um lugar só.</div>
   </section>
 
   <section id="oferta">
     <div class="oferta">
       <p class="nome">Guia Completo do MEI 2026 + bônus</p>
       <p class="valor"><small>R$</small>27,90</p>
-      <p class="ancora">Menos que uma única guia do DAS (R$ 82,05 a R$ 87,05 em 2026).</p>
-      <p class="det">Pagamento único. Você recebe o link do PDF no e-mail logo depois do pagamento.</p>
-      <a class="btn checkout" href="#" data-checkout>
+      <p class="ancora">Menos que uma única guia do DAS</p>
+      <a class="btn checkout btn-grande" href="#" data-checkout>
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><rect x="5" y="11" width="14" height="10" rx="2.5" fill="#fff"/></svg>
         Comprar agora
       </a>
-      <div class="seguro"><span>Pagamento seguro pela Cakto</span><span>Pix ou cartão</span><span>Acesso imediato</span></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="garantia">
-      <img src="img/selo_7dias.png" width="300" height="300" alt="Selo de garantia de 7 dias" loading="lazy">
-      <div>
-        <h3>Garantia de 7 dias</h3>
-        <p>Se não gostar, peça o reembolso em até 7 dias pelo e-mail <a href="mailto:contato@empresarialdigitallk.org">contato@empresarialdigitallk.org</a> e recebe 100% do valor de volta, sem burocracia.</p>
+      <div class="seguro"><span>Pagamento único</span><span>Pix ou cartão</span><span>Acesso imediato</span></div>
+      <div class="garantia-mini">
+        <img src="img/selo_7dias.png" width="300" height="300" alt="Selo de garantia de 7 dias" loading="lazy">
+        <p><b>Garantia de 7 dias.</b> Não gostou? Peça o reembolso pelo e-mail <a href="mailto:contato@empresarialdigitallk.org">contato@empresarialdigitallk.org</a> e devolvemos 100% do valor.</p>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Perguntas</h2>
-    <div class="faq">
-      <details open><summary>Isso é do governo?</summary><div class="resp"><p>Não. É um material de apoio feito pela Empresarial Digital, uma empresa privada. Todos os serviços do MEI continuam gratuitos nos sites oficiais, e o guia mostra exatamente onde.</p></div></details>
-      <details><summary>Como eu recebo?</summary><div class="resp"><p>Logo depois do pagamento chega no seu e-mail o link para baixar o PDF. Confira também a caixa de spam e promoções.</p></div></details>
-      <details><summary>Vou ter que pagar mais alguma coisa?</summary><div class="resp"><p>Não. É um pagamento único de R$ 27,90. Não existe mensalidade nem taxa extra.</p></div></details>
-      <details><summary>Serve para qualquer MEI?</summary><div class="resp"><p>Sim. Comércio, indústria e serviços. Onde a regra muda por atividade, o guia mostra a diferença.</p></div></details>
-      <details><summary>E se eu não gostar?</summary><div class="resp"><p>Você tem 7 dias de garantia. É só mandar um e-mail para contato@empresarialdigitallk.org pedindo o reembolso e devolvemos o valor.</p></div></details>
-    </div>
-    <div class="cta-meio"><a class="btn checkout" href="#" data-checkout>Comprar agora por R$ 27,90</a></div>
-  </section>
-
   <footer>
-    <p><b>Empresarial Digital</b> · Empresa privada de apoio a microempreendedores. Sem vínculo com a Receita Federal, o Sebrae ou qualquer órgão do governo. Os serviços oficiais do MEI são gratuitos em gov.br.</p>
+    <p><b>Empresarial Digital</b> · Material de apoio opcional, feito por uma empresa privada, sem vínculo com a Receita Federal, o Sebrae ou o governo. Abrir e manter o MEI é grátis nos sites oficiais (.gov.br); o único pagamento do mês é o DAS.</p>
     <p>Contato: <a href="mailto:contato@empresarialdigitallk.org">contato@empresarialdigitallk.org</a> · <a href="privacidade.html">Política de privacidade</a> · <a href="privacidade.html#cookies">Política de cookies</a></p>
   </footer>
 </main>
@@ -309,39 +202,16 @@ footer a{color:var(--muted)}
   var email = (q.get("email") || "").trim();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 120) email = "";
 
+  // Quem vem do e-mail: "Parabéns, Fulano." + uma linha com a cidade e a data de abertura do MEI
   if (primeiro.length >= 2) {
-    // Quem vem do e-mail: "Parabéns, Fulano." no lugar da frase genérica
     document.getElementById("ola").hidden = true;
     document.getElementById("pb-titulo").textContent = "Parabéns, " + primeiro + ".";
     document.getElementById("parabens").hidden = false;
-  }
-
-  // Cartão "O seu checklist do MEI" (só aparece se vier nome, abertura ou cidade)
-  function mostra(id, valor){ if (valor) { document.getElementById("p-" + id).textContent = valor; document.getElementById("p-l-" + id).hidden = false; } }
-  function item(html){ var li = document.createElement("li"); li.innerHTML = html; document.getElementById("p-checks").appendChild(li); }
-  function esc(s){ return s.replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
-  if (nomeCompleto || abertura || cidade) {
-    document.getElementById("pessoal").hidden = false;
-    if (primeiro) document.getElementById("p-titulo").textContent = primeiro + ", o seu checklist do MEI";
-    mostra("nome", nomeCompleto);
-    mostra("cidade", cidade);
-    var hoje = new Date();
-    if (abertura) {
-      var anos = hoje.getFullYear() - abertura.getFullYear() - ((hoje.getMonth() < abertura.getMonth() || (hoje.getMonth() === abertura.getMonth() && hoje.getDate() < abertura.getDate())) ? 1 : 0);
-      var dd = ("0" + abertura.getDate()).slice(-2) + "/" + ("0" + (abertura.getMonth() + 1)).slice(-2) + "/" + abertura.getFullYear();
-      mostra("abertura", dd + (anos >= 1 ? " (há " + anos + (anos === 1 ? " ano)" : " anos)") : ""));
-      var meses = (hoje.getFullYear() - abertura.getFullYear()) * 12 + (hoje.getMonth() - abertura.getMonth());
-      if (meses >= 1) item("<span><b>Cerca de " + meses + " guias DAS</b> desde a abertura, uma por mês, com vencimento no dia 20.</span>");
-      var ultimoAno = (hoje.getMonth() > 4) ? hoje.getFullYear() - 1 : hoje.getFullYear() - 2;
-      var decl = ultimoAno - abertura.getFullYear() + 1;
-      if (decl >= 1) item("<span><b>" + decl + (decl === 1 ? " declaração anual" : " declarações anuais") + "</b> (DASN-SIMEI) " + (decl === 1 ? "de " + abertura.getFullYear() : "de " + abertura.getFullYear() + " a " + ultimoAno) + ", uma por ano, até 31 de maio.</span>");
-      else item("<span><b>Primeira declaração anual</b> (DASN-SIMEI): vence em 31 de maio de " + (abertura.getFullYear() + 1) + ".</span>");
-    } else {
-      item("<span><b>DAS todo mês</b>, com vencimento no dia 20.</span>");
-      item("<span><b>Declaração anual</b> (DASN-SIMEI) até 31 de maio.</span>");
-    }
-    item("<span><b>Nota fiscal" + (cidade ? " em " + esc(cidade) : "") + "</b>: o passo a passo no emissor nacional.</span>");
-    item("<span><b>Lei nova:</b> limite de R$ 110 mil em 2027 e perdão de dívidas federais, com regras.</span>");
+    var dd = abertura ? ("0" + abertura.getDate()).slice(-2) + "/" + ("0" + (abertura.getMonth() + 1)).slice(-2) + "/" + abertura.getFullYear() : "";
+    var linha = cidade && dd ? "Seu MEI em " + cidade + ", aberto em " + dd + "."
+              : cidade ? "Seu MEI em " + cidade + "."
+              : dd ? "Seu MEI aberto em " + dd + "." : "";
+    if (linha) { var pm = document.getElementById("pb-mei"); pm.textContent = linha; pm.hidden = false; }
   }
 
   // Checkout: parâmetros de campanha + nome e e-mail já preenchidos (o CNPJ nunca vai)
