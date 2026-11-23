@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia Completo do MEI 2026</title>
+<meta name="description" content="DAS, nota fiscal, limite de faturamento, declaração anual e os links oficiais certos, explicados passo a passo em um PDF.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F3EC; --card:#FFFFFF; --ink:#1D232B; --muted:#5B6470; --line:#E6DFD3;
+  --accent:#B8492F; --accent-dark:#963A25; --soft:#F1E7DA; --ok:#2F6B4F;
+  --f-title:"Fraunces", Georgia, "Times New Roman", serif;
+  --f-body:"Manrope", "Segoe UI", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6}
+.wrap{max-width:680px;margin:0 auto;padding:28px max(18px, env(safe-area-inset-left, 0px)) 40px max(18px, env(safe-area-inset-right, 0px))}
+.ola{font-size:.95rem;color:var(--muted);margin:0 0 14px}
+.ola b{color:var(--ink)}
+.hero{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 18px 40px -18px rgba(29,35,43,.45)}
+h1{font-family:var(--f-title);font-weight:650;font-size:clamp(2rem,1.4rem + 3vw,2.9rem);line-height:1.05;letter-spacing:-.01em;margin:26px 0 12px;text-wrap:balance}
+h2{font-family:var(--f-title);font-weight:650;font-size:1.55rem;line-height:1.15;margin:0 0 14px;text-wrap:balance}
+.sub{font-size:1.1rem;color:var(--muted);margin:0 0 22px}
+.btn{display:block;width:100%;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1.12rem;padding:17px 20px;border-radius:12px;box-shadow:0 10px 22px -12px rgba(184,73,47,.9);transition:background .15s ease, transform .15s ease}
+.btn:hover{background:var(--accent-dark)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.preco-linha{text-align:center;font-size:.92rem;color:var(--muted);margin:10px 0 0}
+section{margin-top:44px}
+.lista{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.lista li{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.lista li::before{content:"";width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23B8492F' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.lista b{font-weight:700}
+.motivos{display:grid;gap:12px}
+.motivo{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.motivo b{display:block;font-family:var(--f-title);font-weight:650;font-size:1.2rem;margin-bottom:4px}
+.motivo p{margin:0;color:var(--muted)}
+.aviso{background:var(--soft);border-radius:14px;padding:16px 18px;font-size:.98rem}
+.aviso b{color:var(--ink)}
+.oferta{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 22px;text-align:center}
+.oferta .nome{font-weight:700;margin:0 0 6px}
+.oferta .valor{font-family:var(--f-title);font-weight:650;font-size:3.2rem;line-height:1;margin:6px 0}
+.oferta .valor small{font-size:1.2rem;font-weight:500;vertical-align:.9em;margin-right:4px}
+.oferta .det{color:var(--muted);font-size:.95rem;margin:0 0 18px}
+.garantia{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:16px;font-size:.92rem;color:var(--muted);text-align:left}
+.selo{flex:0 0 auto;width:46px;height:46px;border-radius:50%;border:2px solid var(--ok);color:var(--ok);display:grid;place-items:center;font-weight:700;font-size:.78rem;line-height:1;text-align:center}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;list-style-position:outside}
+details p{margin:10px 0 0;color:var(--muted)}
+footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted);line-height:1.55}
+footer p{margin:0 0 8px}
+footer a{color:var(--muted)}
+@media (prefers-reduced-motion: reduce){.btn{transition:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <p class="ola" id="ola">Para quem é <b>MEI</b> e quer tudo explicado em um lugar só.</p>
+
+  <img class="hero" src="img/guia_hero.jpg" width="1200" height="800" alt="Guia Completo do MEI 2026 impresso sobre o balcão de um pequeno negócio, ao lado de um celular com a Central de Links aberta" fetchpriority="high">
+
+  <h1>Guia Completo do MEI 2026</h1>
+  <p class="sub">DAS, nota fiscal, limite de faturamento, declaração anual e INSS explicados passo a passo, com o link oficial certo em cada etapa. Em PDF, no seu celular.</p>
+
+  <a class="btn checkout" href="#" data-checkout>Quero o meu guia por R$ 27,90</a>
+  <p class="preco-linha">Pagamento único · Pix ou cartão · chega no seu e-mail na hora</p>
+
+  <section>
+    <h2>O que você recebe</h2>
+    <ul class="lista">
+      <li><span><b>DAS sem erro:</b> onde gerar, como pagar, quanto custa em 2026 e o que acontece se atrasar.</span></li>
+      <li><span><b>Nota fiscal:</b> quando é obrigatória e o passo a passo no emissor nacional.</span></li>
+      <li><span><b>Limite de faturamento:</b> R$ 81 mil hoje e o que muda com a lei nova em 2027 e 2028.</span></li>
+      <li><span><b>Declaração anual:</b> como enviar a DASN-SIMEI até 31 de maio, mesmo sem ter faturado.</span></li>
+      <li><span><b>INSS:</b> os benefícios que o DAS em dia garante e as carências de cada um.</span></li>
+      <li><span><b>Conta gov.br, CCMEI, alterar dados e dar baixa:</b> tudo pelo caminho oficial.</span></li>
+      <li><span><b>Golpes:</b> as taxas que ninguém pode te cobrar, para você não cair em boleto falso.</span></li>
+      <li><span><b>Bônus:</b> Central de Links e calendário do ano, mais a planilha de controle mensal.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Por que ter isso à mão</h2>
+    <div class="motivos">
+      <div class="motivo"><b>Você não cai em golpe</b><p>Todo mês chega boleto, e-mail e WhatsApp cobrando "taxa do MEI". Com o guia você sabe o que é oficial e o que é golpe.</p></div>
+      <div class="motivo"><b>Você não perde prazo</b><p>DAS todo dia 20, declaração até 31 de maio. O calendário mostra tudo o que vence no ano, para não pagar multa nem perder benefício.</p></div>
+      <div class="motivo"><b>Você para de procurar</b><p>Nada de juntar vídeo, post e site duvidoso. Está tudo em um PDF, na ordem em que você precisa.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="aviso"><b>Importante:</b> abrir e manter o MEI é grátis nos sites oficiais (.gov.br). O único pagamento do mês é o DAS. Este guia é um material de apoio opcional, feito por uma empresa privada, que junta o passo a passo e os links certos em um lugar só.</div>
+  </section>
+
+  <section>
+    <div class="oferta">
+      <p class="nome">Guia Completo do MEI 2026 + bônus</p>
+      <p class="valor"><small>R$</small>27,90</p>
+      <p class="det">Pagamento único. Você recebe o link do PDF no e-mail logo depois do pagamento.</p>
+      <a class="btn checkout" href="#" data-checkout>Quero o meu guia</a>
+      <div class="garantia"><span class="selo">7<br>dias</span><span>Se não gostar, peça o reembolso em até 7 dias e recebe o valor de volta.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Perguntas</h2>
+    <details><summary>Isso é do governo?</summary><p>Não. É um material de apoio feito pela Empresarial Digital, uma empresa privada. Todos os serviços do MEI continuam gratuitos nos sites oficiais, e o guia mostra exatamente onde.</p></details>
+    <details><summary>Como eu recebo?</summary><p>Logo depois do pagamento chega no seu e-mail o link para baixar o PDF. Confira também a caixa de spam e promoções.</p></details>
+    <details><summary>Vou ter que pagar mais alguma coisa?</summary><p>Não. É um pagamento único de R$ 27,90. Não existe mensalidade nem taxa extra.</p></details>
+    <details><summary>Serve para qualquer MEI?</summary><p>Sim. Comércio, indústria e serviços. Onde a regra muda por atividade, o guia mostra a diferença.</p></details>
+  </section>
+
+  <footer>
+    <p><b>Empresarial Digital</b> · Liniker Wambaster da Silva LTDA · CNPJ 65.355.896/0001-77</p>
+    <p>Empresa privada de apoio a microempreendedores. Sem vínculo com a Receita Federal, o Sebrae ou qualquer órgão do governo. Os serviços oficiais do MEI são gratuitos em gov.br.</p>
+    <p>Contato: contato@empresarialdigitallk.org · <a href="privacidade.html">Política de privacidade</a></p>
+  </footer>
+</main>
+<script>
+(function(){
+  var CHECKOUT = "https://pay.cakto.com.br/8p8zxjd";
+  var q = new URLSearchParams(location.search);
+  // Saudação: só o primeiro nome, só letras, no máximo 20 caracteres
+  var nome = (q.get("nome") || "").trim().split(/\s+/)[0] || "";
+  nome = nome.replace(/[^A-Za-zÀ-ÿ'-]/g, "").slice(0, 20);
+  if (nome.length >= 2) {
+    nome = nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
+    var ola = document.getElementById("ola");
+    ola.textContent = "";
+    var b = document.createElement("b"); b.textContent = nome;
+    ola.appendChild(document.createTextNode("Oi, ")); ola.appendChild(b);
+    ola.appendChild(document.createTextNode(". Este é o guia que falamos no e-mail."));
+  }
+  // Repassa só os parâmetros de campanha (nunca nome ou e-mail) para o checkout
+  var url = new URL(CHECKOUT, location.href);
+  ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","v"].forEach(function(k){
+    var val = q.get(k); if (val) url.searchParams.set(k === "v" ? "utm_content" : k, val);
+  });
+  document.querySelectorAll("[data-checkout]").forEach(function(a){ a.href = url.toString(); });
+})();
+</script>
+</body>
+</html>
