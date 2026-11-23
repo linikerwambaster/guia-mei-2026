@@ -11,13 +11,13 @@
 // Links do e-mail no formato /l/{cnpj}?nome=...: abre a página principal levando os dados no "#",
 // que não vai para servidor nenhum. O CNPJ do caminho é descartado.
 (function(){
-  var base = "/guia-mei-2026/";
+  var base = location.pathname.indexOf("/guia-mei-2026/") === 0 ? "/guia-mei-2026/" : "/";
   var dados = location.search.slice(1) || location.hash.slice(1);
   location.replace(base + (dados ? "#" + dados : ""));
 })();
 </script>
 </head>
 <body>
-<p>Abrindo a página... <a href="/guia-mei-2026/">clique aqui</a> se não abrir.</p>
+<p>Abrindo a página... <a href="/">clique aqui</a> se não abrir.</p>
 </body>
 </html>
