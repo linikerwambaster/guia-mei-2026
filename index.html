@@ -94,6 +94,23 @@ footer a{color:var(--muted)}
 .cookies p{margin:0;flex:1}
 .cookies a{color:#fff}
 .cookies button{flex:0 0 auto;background:#fff;color:var(--navy);border:0;border-radius:10px;font:700 .9rem var(--f-body);padding:10px 16px;min-height:44px;cursor:pointer}
+/* topo de venda */
+.parabens{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px 16px;margin:0 0 18px;color:#E3ECF7;font-size:1rem}
+.parabens p{margin:0}
+.parabens b{color:#fff}
+.parabens .pb-titulo{font-family:var(--f-title);font-weight:800;font-size:1.45rem;line-height:1.15;color:#fff;margin:0 0 6px}
+.btn-grande{min-height:64px;font-size:1.22rem}
+.topo .hero{margin-top:24px}
+/* exemplo de golpe */
+.golpe{position:relative;background:#FFF8F3;border:1px dashed #E07B39;border-radius:14px;padding:16px 16px 14px;margin:0 0 14px}
+.golpe-tag{position:absolute;top:-11px;left:14px;margin:0;background:#E07B39;color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.golpe-assunto{margin:4px 0 4px;font-weight:700;color:#8A3B12}
+.golpe-linha{margin:0 0 10px;font-size:.95rem;color:#5B3A26}
+.golpe-btn{display:inline-block;background:#C0392B;color:#fff;font-weight:700;font-size:.85rem;padding:6px 12px;border-radius:8px;text-decoration:line-through;opacity:.85}
+.prazo{background:#FFF6E0;border-left:4px solid #F2B134;border-radius:12px;padding:16px 18px;font-size:.98rem}
+.prazo b{display:block;color:var(--navy);font-size:1.05rem;margin-bottom:4px}
+.prazo p{margin:0;color:var(--ink)}
+.oferta .ancora{display:inline-block;background:#E9F6EF;color:#0E7A4B;font-weight:700;font-size:.88rem;padding:6px 12px;border-radius:999px;margin:4px 0 10px}
 /* cartão personalizado */
 .pessoal{background:#fff;border:2px solid var(--blue);border-radius:18px;padding:20px 20px 16px;box-shadow:0 18px 40px -28px rgba(31,111,209,.8)}
 .pessoal .tag{display:inline-block;margin:0 0 8px;background:var(--blue-soft);color:var(--blue);font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
@@ -115,16 +132,19 @@ footer a{color:var(--muted)}
 <body>
 <header class="topo"><div class="wrap">
   <p class="ola" id="ola">Para quem é <b>MEI</b> e quer tudo explicado em um lugar só.</p>
+  <div class="parabens" id="parabens" hidden>
+    <p class="pb-titulo" id="pb-titulo">Parabéns!</p>
+    <p>Você está dando um passo importante: ter o <b>Guia Completo do MEI 2026</b> para fazer todos os pagamentos do jeito certo, com tudo em um lugar só. Sem ficar pesquisando em vários sites e sem pagar caro para alguém fazer o que você resolve de graça nos sites oficiais.</p>
+  </div>
 
   <p class="alerta"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3z" fill="#0B2A4A"/><path d="M12 9v5" stroke="#F2B134" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="17" r="1.3" fill="#F2B134"/></svg>Alerta para quem é MEI</p>
   <h1>Cuidado com o que você paga.</h1>
+  <p class="sub">Todo mês chegam boletos e mensagens cobrando "taxas do MEI" que não existem. No guia você vê o que é oficial, o que é golpe e o link certo de cada etapa: DAS, nota fiscal, limite e declaração.</p>
+
+  <a class="btn checkout btn-grande" id="cta-topo" href="#" data-checkout>Comprar agora por R$ 27,90</a>
+  <p class="preco-linha">Pix ou cartão · o PDF chega no seu e-mail na hora · 7 dias de garantia</p>
 
   <img class="hero" src="img/hero_computador.jpg" width="1200" height="800" alt="Empreendedora vendo no notebook a página de golpes do material e, no celular, a Central de Links do MEI" fetchpriority="high">
-
-  <p class="sub">Todo mês chegam boletos e mensagens cobrando "taxas do MEI" que não existem. O <b>Guia Completo do MEI 2026</b> mostra o que é oficial, o que é golpe e o passo a passo de DAS, nota fiscal, limite e declaração, com o link certo em cada etapa.</p>
-
-  <a class="btn checkout" id="cta-topo" href="#" data-checkout>Quero o meu guia por R$ 27,90</a>
-  <p class="preco-linha">Pagamento único · Pix ou cartão · chega no seu e-mail na hora</p>
 </div></header>
 <main class="wrap">
 
@@ -143,6 +163,19 @@ footer a{color:var(--muted)}
   </section>
 
   <section>
+    <h2>Imagine este e-mail chegando hoje</h2>
+    <div class="golpe" aria-label="Exemplo de e-mail de golpe">
+      <p class="golpe-tag">Exemplo de golpe</p>
+      <p class="golpe-assunto">ÚLTIMO AVISO: taxa anual do MEI pendente</p>
+      <p class="golpe-linha">Seu CNPJ pode ser cancelado. Valor: <b>R$ 97,00</b> · Vence: <b>hoje</b></p>
+      <span class="golpe-btn">Pagar boleto</span>
+    </div>
+    <p>Parece oficial. Tem o seu nome, o seu CNPJ e um prazo curto. Muita gente paga com medo de perder o CNPJ. <b>Só que essa taxa não existe.</b></p>
+    <p>Com o guia, você abre a página de golpes, confere em um minuto que é falso e gera o DAS certo, direto no site oficial. Esse um minuto já pode valer mais do que os R$ 27,90.</p>
+    <div class="cta-meio"><a class="btn checkout" href="#" data-checkout>Quero meu guia por R$ 27,90</a></div>
+  </section>
+
+  <section>
     <h2>O que você recebe</h2>
     <ul class="lista">
       <li><span><b>DAS sem erro:</b> onde gerar, como pagar, quanto custa em 2026 e o que acontece se atrasar.</span></li>
@@ -154,7 +187,14 @@ footer a{color:var(--muted)}
       <li><span><b>Golpes:</b> as taxas que ninguém pode te cobrar, para você não cair em boleto falso.</span></li>
       <li><span><b>Bônus:</b> Central de Links e calendário do ano, mais a planilha de controle mensal.</span></li>
     </ul>
-    <div class="cta-meio"><a class="btn checkout" href="#" data-checkout>Quero o meu guia por R$ 27,90</a></div>
+    <div class="cta-meio"><a class="btn checkout" href="#" data-checkout>Quero meu guia por R$ 27,90</a></div>
+  </section>
+
+  <section>
+    <div class="prazo">
+      <b>Tem DAS atrasado? Fique atento a janeiro.</b>
+      <p>A lei nova do MEI (LC 238/2026) perdoa dívidas federais do MEI, mas só mantém o perdão quem pagar o DAS em dia nos 6 primeiros meses da lei, a partir de janeiro de 2027. O guia mostra como conferir sua situação e não perder esse prazo.</p>
+    </div>
   </section>
 
   <section>
@@ -174,10 +214,11 @@ footer a{color:var(--muted)}
     <div class="oferta">
       <p class="nome">Guia Completo do MEI 2026 + bônus</p>
       <p class="valor"><small>R$</small>27,90</p>
+      <p class="ancora">Menos que uma única guia do DAS (R$ 82,05 a R$ 87,05 em 2026).</p>
       <p class="det">Pagamento único. Você recebe o link do PDF no e-mail logo depois do pagamento.</p>
       <a class="btn checkout" href="#" data-checkout>
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><rect x="5" y="11" width="14" height="10" rx="2.5" fill="#fff"/></svg>
-        Quero o meu guia
+        Comprar agora
       </a>
       <div class="seguro"><span>Pagamento seguro pela Cakto</span><span>Pix ou cartão</span><span>Acesso imediato</span></div>
     </div>
@@ -202,7 +243,7 @@ footer a{color:var(--muted)}
       <details><summary>Serve para qualquer MEI?</summary><div class="resp"><p>Sim. Comércio, indústria e serviços. Onde a regra muda por atividade, o guia mostra a diferença.</p></div></details>
       <details><summary>E se eu não gostar?</summary><div class="resp"><p>Você tem 7 dias de garantia. É só mandar um e-mail para contato@empresarialdigitallk.org pedindo o reembolso e devolvemos o valor.</p></div></details>
     </div>
-    <div class="cta-meio"><a class="btn checkout" href="#" data-checkout>Quero o meu guia por R$ 27,90</a></div>
+    <div class="cta-meio"><a class="btn checkout" href="#" data-checkout>Comprar agora por R$ 27,90</a></div>
   </section>
 
   <footer>
@@ -214,7 +255,7 @@ footer a{color:var(--muted)}
 <div class="barra" id="barra" aria-hidden="true">
   <div class="in">
     <div class="p"><small>Pagamento único</small><b>R$ 27,90</b></div>
-    <a class="btn checkout" href="#" data-checkout tabindex="-1">Quero o meu guia</a>
+    <a class="btn checkout" href="#" data-checkout tabindex="-1">Comprar agora</a>
   </div>
 </div>
 
@@ -269,11 +310,10 @@ footer a{color:var(--muted)}
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 120) email = "";
 
   if (primeiro.length >= 2) {
-    var ola = document.getElementById("ola");
-    ola.textContent = "";
-    var b = document.createElement("b"); b.textContent = primeiro;
-    ola.appendChild(document.createTextNode("Oi, ")); ola.appendChild(b);
-    ola.appendChild(document.createTextNode(". Este é o guia de R$ 27,90 que falamos no e-mail."));
+    // Quem vem do e-mail: "Parabéns, Fulano." no lugar da frase genérica
+    document.getElementById("ola").hidden = true;
+    document.getElementById("pb-titulo").textContent = "Parabéns, " + primeiro + ".";
+    document.getElementById("parabens").hidden = false;
   }
 
   // Cartão "O seu checklist do MEI" (só aparece se vier nome, abertura ou cidade)
