@@ -439,3 +439,13 @@ section{position:relative}
 .hero .prova .bolinhas i.av:first-child{margin-left:0}
 /* foto do perfil nos celulares dos depoimentos */
 .zap-topo .foto{border-radius:50%;background-color:#6B7C85;background-repeat:no-repeat;flex:0 0 auto}
+/* fotos nas frases dos depoimentos */
+.frase i.fav{background-color:#9CC3FF;background-repeat:no-repeat;border:2px solid #fff;box-shadow:0 0 0 1px var(--linha)}
+/* cabeçalho do WhatsApp compacto nos celulares menores (páginas de produto) */
+.zap-topo > div{min-width:0;flex:1}
+.prod-visual .cel .zap-topo b{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prod-visual .cel .zap-topo small{font-size:10.5px;white-space:nowrap}
+.prod-visual .cel .zap-topo .ic{gap:10px}
+.prod-visual .cel .zap-topo .ic svg{width:17px;height:17px}
+.prod-visual .cel .zap-topo .foto,.prod-visual .cel .zap-topo .foto svg{width:30px;height:30px}
+@media (max-width:959px){.prod-visual .cel .zap-topo .ic{display:none}.prod-visual .cel .zap-topo{gap:7px;padding-left:8px;padding-right:8px}}
