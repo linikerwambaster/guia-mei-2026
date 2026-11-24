@@ -76,7 +76,7 @@
     if (CHECKOUTS[prod]) { a.href = montaUrl(CHECKOUTS[prod]); a.rel = "noreferrer"; }
     else if (prod === "mentoria") {
       // enquanto o checkout da mentoria não existe, o botão abre um e-mail pronto para a gente
-      a.href = "mailto:contato@empresarialdigitallk.org?subject=" + encodeURIComponent("Quero a Mentoria MEI 30 dias") +
+      a.href = "mailto:contato.empresarialdigtal@gmail.com?subject=" + encodeURIComponent("Quero a Mentoria MEI 30 dias") +
         "&body=" + encodeURIComponent("Olá! Quero contratar a Mentoria MEI 30 dias (R$ 97)." + (nomeCompleto ? "\nMeu nome: " + nomeCompleto : ""));
     }
     else a.href = pagina === prod ? "#oferta" : "/" + prod + "#oferta";
