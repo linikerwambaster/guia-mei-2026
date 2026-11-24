@@ -352,3 +352,64 @@ section{position:relative}
   .hero-txt{margin-top:-64px;max-width:none}
   .hero-foto::before{display:none}
 }
+
+/* ===== v5 (24/11): ícones 3D, faixa de temas nova e celular realista ===== */
+/* ícones 3D nos cartões */
+.cartao .ic.ic3d{width:68px;height:68px;border-radius:20px;background:linear-gradient(150deg,#FFFFFF 0%,#EAF2FF 100%);border:1px solid #D6E4F7;box-shadow:0 10px 22px -14px rgba(31,95,214,.55),inset 0 1px 0 #fff}
+.cartao .ic.ic3d img{width:46px;height:46px;filter:drop-shadow(0 6px 6px rgba(11,37,69,.18));transition:transform .3s}
+.cartao:hover .ic.ic3d img{transform:translateY(-3px) rotate(-4deg) scale(1.06)}
+.cartao.destaque .ic.ic3d{background:linear-gradient(150deg,rgba(255,255,255,.22),rgba(255,255,255,.06));border-color:rgba(255,255,255,.3);box-shadow:none}
+
+/* faixa de temas: duas linhas em sentidos opostos, com pílulas e ícones (sem estrelinhas) */
+.temas{position:relative;margin-top:18px;padding:18px 0;display:grid;gap:12px;overflow:hidden;
+  background:linear-gradient(100deg,#0B2545 0%,#123A73 55%,#1A4FB8 100%)}
+.temas::before,.temas::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.temas::before{left:0;background:linear-gradient(90deg,#0B2545,rgba(11,37,69,0))}
+.temas::after{right:0;background:linear-gradient(270deg,#1A4FB8,rgba(26,79,184,0))}
+.temas .trilho{display:flex;gap:12px;width:max-content;animation:corre 46s linear infinite}
+.temas .trilho.volta{animation-direction:reverse;animation-duration:52s}
+.temas .pill{display:inline-flex;align-items:center;gap:10px;padding:9px 18px 9px 10px;border-radius:999px;white-space:nowrap;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;
+  font-family:var(--f-titulo);font-stretch:82%;font-weight:800;font-size:clamp(16px,1.9vw,20px);text-transform:uppercase;letter-spacing:.01em}
+.temas .pill img{width:28px;height:28px;padding:3px;border-radius:50%;background:rgba(255,255,255,.95)}
+.temas span::after{content:none}
+.temas .trilho.volta .pill{background:rgba(156,195,255,.12)}
+@media (prefers-reduced-motion:reduce){.temas .trilho{animation:none}}
+
+/* celular realista (iPhone) */
+.cel{background:linear-gradient(145deg,#3a3f47 0%,#16181d 18%,#0b0c0f 50%,#16181d 82%,#3a3f47 100%);padding:11px;border-radius:46px;
+  box-shadow:0 0 0 1.5px #5b616b inset,0 0 0 3px #1b1d22,0 50px 90px -40px rgba(11,37,69,.75),0 18px 40px -24px rgba(0,0,0,.6)}
+.cel::before{content:"";position:absolute;top:120px;right:-4px;left:auto;transform:none;width:4px;height:74px;border-radius:0 3px 3px 0;background:#2a2e35;
+  box-shadow:-1px 0 0 #5b616b inset;z-index:0}
+.cel::after{content:"";position:absolute;top:96px;left:-4px;width:4px;height:30px;border-radius:3px 0 0 3px;background:#2a2e35;
+  box-shadow:0 46px 0 #2a2e35,0 92px 0 #2a2e35}
+.tela{border-radius:36px;position:relative;isolation:isolate}
+.ios-status{position:relative;z-index:3;height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 24px 0 28px;background:#1F2C34;color:#E9EDEF;font:700 13px/1 -apple-system,"SF Pro Text","Segoe UI",Arial,sans-serif}
+.ios-status .ilha{position:absolute;left:50%;top:9px;transform:translateX(-50%);width:88px;height:25px;border-radius:999px;background:#000}
+.ios-status .sinais{display:flex;align-items:center;gap:5px}
+.ios-status svg{fill:#E9EDEF}
+.ios-status .bat{width:23px;height:11px;border:1.3px solid rgba(233,237,239,.55);border-radius:3.5px;padding:1.3px;position:relative}
+.ios-status .bat::after{content:"";position:absolute;right:-3.5px;top:3px;width:2px;height:4px;border-radius:0 1px 1px 0;background:rgba(233,237,239,.55)}
+.ios-status .bat i{display:block;width:70%;height:100%;border-radius:1.5px;background:#E9EDEF}
+.zap-topo{padding:6px 12px 9px;gap:9px}
+.zap-topo .volta{font-size:26px;line-height:1;color:#E9EDEF;opacity:1;margin-right:-2px}
+.zap-topo .foto{filter:none;background:none;width:36px;height:36px}
+.zap-topo .foto svg{width:36px;height:36px;display:block}
+.zap-topo .ic{margin-left:auto;display:flex;align-items:center;gap:16px;color:#E9EDEF;opacity:.9}
+.zap-chat{background-color:#0B141A;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.05' stroke-width='1.4' stroke-linecap='round'%3E%3Cpath d='M14 18c4-6 12-6 16 0s12 6 16 0'/%3E%3Ccircle cx='86' cy='22' r='7'/%3E%3Cpath d='M70 60l8-8 8 8-8 8z'/%3E%3Cpath d='M20 70h18v14H20zM24 70v-4h10v4'/%3E%3Cpath d='M92 88c0-6 10-6 10 0 0 7-10 12-10 12s-10-5-10-12c0-6 10-6 10 0'/%3E%3Cpath d='M48 100l6-10 6 10z'/%3E%3Ccircle cx='58' cy='34' r='2.5'/%3E%3Cpath d='M104 50l4 4m0-4l-4 4'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:120px 120px}
+.zm{box-shadow:0 1px .5px rgba(0,0,0,.25)}
+.zm.in::before,.zm.out::before{content:"";position:absolute;top:0;width:8px;height:10px}
+.zm.in::before{left:-6px;background:linear-gradient(225deg,var(--zap-in) 50%,transparent 50%)}
+.zm.out::before{right:-6px;background:linear-gradient(135deg,var(--zap-out) 50%,transparent 50%)}
+.zap-rodape{display:flex;align-items:center;gap:12px;padding:8px 12px 18px;background:#1F2C34;color:#E9EDEF}
+.zap-rodape b{font:300 26px/1 Arial,sans-serif;color:#E9EDEF;width:22px;text-align:center}
+.zap-rodape span{flex:1;height:34px;border-radius:999px;background:#2A3942;display:flex;align-items:center;justify-content:flex-end;padding-right:10px}
+.zap-rodape span i{width:16px;height:16px;border-radius:5px;border:1.6px solid rgba(233,237,239,.6)}
+.zap-rodape svg{opacity:.9;flex:0 0 auto}
+.zap-rodape::after{content:"";position:absolute;left:50%;bottom:6px;transform:translateX(-50%);width:110px;height:4px;border-radius:999px;background:rgba(255,255,255,.75)}
+.prod-visual .cel .ios-status{height:34px;font-size:12px;padding:0 18px 0 22px}
+.prod-visual .cel .ios-status .ilha{width:70px;height:21px;top:7px}
+.prod-visual .cel .zap-topo{padding-top:4px}
+.zap-rodape span i{width:16px;height:16px;border-radius:5px;background:none;border:1.6px solid rgba(233,237,239,.6)}
