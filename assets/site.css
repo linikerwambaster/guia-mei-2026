@@ -413,3 +413,27 @@ section{position:relative}
 .prod-visual .cel .ios-status .ilha{width:70px;height:21px;top:7px}
 .prod-visual .cel .zap-topo{padding-top:4px}
 .zap-rodape span i{width:16px;height:16px;border-radius:5px;background:none;border:1.6px solid rgba(233,237,239,.6)}
+
+/* ===== v6 (24/11): pegada institucional, sem ícones ===== */
+.cartao{padding-top:30px}
+.cartao::before{content:"";display:block;width:36px;height:3px;border-radius:3px;background:var(--azul);margin-bottom:18px}
+.cartao.destaque::before{background:#9CC3FF}
+.cartao h3{margin-top:0}
+.temas .pill{padding:9px 20px}
+/* bolinhas da capa em tons da marca */
+.hero .prova .bolinhas i{color:#fff;background:#1F5FD6;border:2px solid #0B2545;font-size:12px}
+.hero .prova .bolinhas i:nth-child(2){background:#2F7BF5}
+.hero .prova .bolinhas i:nth-child(3){background:#5B93DA}
+.hero .prova .bolinhas i:nth-child(4){background:#9CC3FF;color:#0B2545}
+/* para quem trabalha por conta */
+.gente{margin-top:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gente figure{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:3/4;background:var(--ceu);box-shadow:0 20px 44px -30px rgba(11,37,69,.6)}
+.gente img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.gente figure:hover img{transform:scale(1.04)}
+.gente figure::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(180deg,rgba(11,37,69,0),rgba(11,37,69,.85))}
+.gente figcaption{position:absolute;z-index:2;left:16px;bottom:16px;color:#fff;font-family:var(--f-titulo);font-stretch:80%;font-weight:900;text-transform:uppercase;font-size:clamp(20px,2.2vw,26px);line-height:1}
+.gente .credito{top:10px;right:10px;font-size:10px}
+@media (max-width:860px){.gente{grid-template-columns:1fr 1fr;gap:12px}.gente figure{border-radius:18px}}
+/* fotos dentro das bolinhas da capa */
+.hero .prova .bolinhas i.av{width:42px;height:42px;margin-left:-12px;border:2.5px solid #fff;background-color:#9CC3FF;background-repeat:no-repeat;box-shadow:0 4px 10px rgba(0,0,0,.25)}
+.hero .prova .bolinhas i.av:first-child{margin-left:0}
