@@ -449,3 +449,21 @@ section{position:relative}
 .prod-visual .cel .zap-topo .ic svg{width:17px;height:17px}
 .prod-visual .cel .zap-topo .foto,.prod-visual .cel .zap-topo .foto svg{width:30px;height:30px}
 @media (max-width:959px){.prod-visual .cel .zap-topo .ic{display:none}.prod-visual .cel .zap-topo{gap:7px;padding-left:8px;padding-right:8px}}
+
+/* ===== v8 (24/11): mesma identidade dos posts: Instrument Serif (títulos, destaque em itálico azul) + Manrope (texto) ===== */
+:root{--f-titulo:"Instrument Serif","Times New Roman",serif;--f-texto:"Manrope","Segoe UI",Arial,sans-serif}
+.titulo,.hero h1,.lista h3,.oferta h3,.final h2,.plano h3,.prod-hero h1,.gente figcaption,
+.numero b,.oferta .preco,.barra .p b,.plano .preco,.prod-hero .preco-linha b,.etapa .bola{
+  font-family:var(--f-titulo);font-stretch:normal;font-weight:400;text-transform:none;letter-spacing:-.015em}
+.titulo{line-height:1;font-size:clamp(40px,5.4vw,68px)}
+.hero h1{line-height:.95;font-size:clamp(50px,8.2vw,108px)}
+.prod-hero h1{line-height:.95;font-size:clamp(48px,7.4vw,96px)}
+.final h2{line-height:.95;font-size:clamp(44px,6.6vw,84px)}
+.lista h3{font-size:32px;line-height:1.05}
+.oferta h3,.plano h3{font-size:clamp(32px,3.4vw,42px);line-height:1}
+.titulo em,.hero h1 em,.prod-hero h1 em,.final h2 em{font-style:italic;color:var(--azul)}
+.gente figcaption{font-style:italic;font-size:clamp(24px,2.6vw,32px)}
+.etapa .bola{font-style:italic;font-size:32px}
+.logo span{font-family:var(--f-texto);font-weight:800;letter-spacing:-.02em}
+.temas .pill{font-family:var(--f-texto);font-stretch:normal;font-weight:700;text-transform:none;letter-spacing:0}
+.hero h1 em{color:#9CC3FF}
