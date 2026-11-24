@@ -437,3 +437,5 @@ section{position:relative}
 /* fotos dentro das bolinhas da capa */
 .hero .prova .bolinhas i.av{width:42px;height:42px;margin-left:-12px;border:2.5px solid #fff;background-color:#9CC3FF;background-repeat:no-repeat;box-shadow:0 4px 10px rgba(0,0,0,.25)}
 .hero .prova .bolinhas i.av:first-child{margin-left:0}
+/* foto do perfil nos celulares dos depoimentos */
+.zap-topo .foto{border-radius:50%;background-color:#6B7C85;background-repeat:no-repeat;flex:0 0 auto}
