@@ -467,3 +467,10 @@ section{position:relative}
 .logo span{font-family:var(--f-texto);font-weight:800;letter-spacing:-.02em}
 .temas .pill{font-family:var(--f-texto);font-stretch:normal;font-weight:700;text-transform:none;letter-spacing:0}
 .hero h1 em{color:#9CC3FF}
+
+/* v9 (24/11): ícones das redes sociais no rodapé */
+.rodape .redes{display:flex;align-items:center;gap:10px}
+.rodape .redes span{font-weight:700;color:var(--texto);margin-right:2px}
+.rodape .redes a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--azul);color:#fff;transition:background .2s,transform .2s}
+.rodape .redes a:hover{background:var(--marinho);transform:translateY(-2px)}
+.rodape .redes svg{width:20px;height:20px;display:block}
